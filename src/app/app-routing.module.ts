@@ -6,10 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 
 const routes: Routes = [
-  {path: '', canActivate: [AuthGuard], children: [
-    {path: 'Transactions', component: TransactionsComponent},
-    {path: 'Itinerary', component: ItineraryComponent }
-  ]},
+  {path: '', redirectTo: 'Transactions', pathMatch: 'full'},
+  {path: 'Transactions', component: TransactionsComponent},
+  {path: 'Itinerary', component: ItineraryComponent },
   {path: 'Login', component: LoginComponent},
   {path: '**', redirectTo: 'Transactions'}
 ];
