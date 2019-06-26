@@ -1,0 +1,27 @@
+<header class="header-5">
+    <div class="header">
+        <div class="branding">
+            <a href="..." class="nav-link">
+                <img width="45px" height="45px" src="../../assets/mono.png">
+                <span class="title">  Columbus</span>
+            </a>
+        </div>
+        <div class="header-nav">
+            <a [routerLink]="['Transactions']" routerLinkActive="router-link-active" class="nav-link"><span class="nav-text">Transactions</span></a>
+            <a [routerLink]="['Itinerary']" routerLinkActive="router-link-active" class="nav-link"><span class="nav-text">Itinerary</span></a>
+        </div>
+        <div class="header-actions">
+            <clr-dropdown>
+                <button class="nav-icon" clrDropdownTrigger>
+                    <clr-icon shape="cog" style="padding:20px;"></clr-icon><!--issue here , fix for better cog icon-->
+                </button>
+                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                    <a href="..." clrDropdownItem>About</a>
+                    <a href="..." clrDropdownItem>Preferences</a>
+                    <a href="..." clrDropdownItem>Log out</a>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </div>
+</header>
+    
