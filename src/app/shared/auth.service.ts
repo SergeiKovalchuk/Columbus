@@ -1,6 +1,6 @@
 export class AuthService {
     loggedIn = false;
-    //TODO: implement reaching out to http service
+     // TODO: implement reaching out to http service
     isAuthenticated() {
       const promise = new Promise(
         (resolve, reject) => {

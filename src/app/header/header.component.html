@@ -1,27 +1,25 @@
-<header class="header-5">
-    <div class="header">
-        <div class="branding">
-            <a href="..." class="nav-link">
-                <img width="45px" height="45px" src="../../assets/mono.png">
-                <span class="title">  Columbus</span>
-            </a>
-        </div>
-        <div class="header-nav">
-            <a [routerLink]="['Transactions']" routerLinkActive="active" class="nav-link"><span class="nav-text">Transactions</span></a>
-            <a [routerLink]="['Itinerary']" routerLinkActive="active" class="nav-link"><span class="nav-text">Itinerary</span></a>
-        </div>
-        <div class="header-actions">
-            <clr-dropdown>
-                <button class="nav-icon" clrDropdownTrigger>
-                    <clr-icon shape="cog" style="padding:20px;"></clr-icon><!--issue here , fix for better cog icon n -->
-                </button>
-                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                    <a href="..." clrDropdownItem>About</a>
-                    <a href="..." clrDropdownItem>Preferences</a>
-                    <a href="..." clrDropdownItem>Log out</a>
-                </clr-dropdown-menu>
-            </clr-dropdown>
-        </div>
+<header class="header header-6">
+    <div class="branding">
+        <a href="..." class="nav-link">
+            <img width="45px" height="45px" src="../../assets/mono.png">
+            <span class="title">  Columbus</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a [routerLink]="['Transactions']" routerLinkActive="active" class="nav-link"><span class="nav-text">Transactions</span></a>
+        <a [routerLink]="['Itinerary']" routerLinkActive="active" class="nav-link"><span class="nav-text">Itinerary</span></a>
+    </div>
+    <div class="header-actions">
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger>
+                <clr-icon shape="cog" style="padding:20px;"></clr-icon><!--issue here , fix for better cog icon n -->
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="..." clrDropdownItem>About</a>
+                <a href="..." clrDropdownItem>Preferences</a>
+                <a href="..." clrDropdownItem>Log out</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
     </div>
 </header>
     

@@ -1,3 +1,5 @@
+import { PrivService } from './shared/priv.service';
+import { PrivGuard } from './shared/priv-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
+import { AuthGuard } from './shared/auth-guard.service';
+import { AuthService } from './shared/auth.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,8 @@ import { ItineraryComponent } from './itinerary/itinerary.component';
     HeaderComponent,
     LoginComponent,
     TransactionsComponent,
-    ItineraryComponent
+    ItineraryComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,7 @@ import { ItineraryComponent } from './itinerary/itinerary.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AuthGuard , AuthService , PrivGuard , PrivService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
