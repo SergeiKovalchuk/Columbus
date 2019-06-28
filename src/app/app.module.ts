@@ -2,11 +2,11 @@ import { PrivService } from './shared/priv.service';
 import { PrivGuard } from './shared/priv-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import {SuiModule} from 'ng2-semantic-ui';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
@@ -28,10 +28,10 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SuiModule,
     ClarityModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [ AuthGuard , AuthService , PrivGuard , PrivService ],
   bootstrap: [AppComponent]
