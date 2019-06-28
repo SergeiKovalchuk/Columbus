@@ -1,5 +1,5 @@
 export class PrivService {
-    allowView = false;
+    allowView = true;
     // TODO: add verification to a priv array
     isAllowedView() {
         const promise = new Promise(

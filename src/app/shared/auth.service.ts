@@ -1,5 +1,5 @@
 export class AuthService {
-    loggedIn = false;
+    loggedIn = true;
      // TODO: implement reaching out to http service
     isAuthenticated() {
       const promise = new Promise(
