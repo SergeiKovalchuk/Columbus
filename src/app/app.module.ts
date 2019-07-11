@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import {SuiModule} from 'ng2-semantic-ui';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +14,7 @@ import { ItineraryComponent } from './itinerary/itinerary.component';
 import { AuthGuard } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
 import { ErrorComponent } from './error/error.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -28,10 +28,10 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SuiModule,
     ClarityModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [ AuthGuard , AuthService , PrivGuard , PrivService ],
   bootstrap: [AppComponent]
