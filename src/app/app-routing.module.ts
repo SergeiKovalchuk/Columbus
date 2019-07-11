@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
 import { PrivGuard } from './shared/priv-guard.service';
 import { AuthGuard } from './shared/auth-guard.service';
@@ -12,6 +13,8 @@ const routes: Routes = [
   {path: 'Transactions', component: TransactionsComponent , canActivate: [AuthGuard]},
   {path: 'Itinerary', component: ItineraryComponent , canActivate: [PrivGuard]},
   {path: 'Login', component: LoginComponent},
+  {path: 'About', component: AboutComponent},
+  {path: 'Settings', component: ItineraryComponent},
   {path: 'Error', component: ErrorComponent},
   {path: '**', redirectTo: 'Transactions'}
 ];

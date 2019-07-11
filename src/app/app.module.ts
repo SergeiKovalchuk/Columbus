@@ -1,3 +1,4 @@
+import { ErrorService } from './error/error.service';
 import { PrivService } from './shared/priv.service';
 import { PrivGuard } from './shared/priv-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { AuthGuard } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
 import { ErrorComponent } from './error/error.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     LoginComponent,
     TransactionsComponent,
     ItineraryComponent,
-    ErrorComponent
+    ErrorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [ AuthGuard , AuthService , PrivGuard , PrivService ],
+  providers: [ AuthGuard , AuthService , PrivGuard , PrivService , ErrorService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

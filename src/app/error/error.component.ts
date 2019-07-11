@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ErrorService } from './error.service';
 
 @Component({
   selector: 'app-error',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private errorService: ErrorService) { }
+  error = '';
   ngOnInit() {
+    this.error = this.errorService.getErrorCode();
   }
 
 }
