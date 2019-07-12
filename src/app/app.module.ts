@@ -17,6 +17,7 @@ import { AuthService } from './shared/auth.service';
 import { ErrorComponent } from './error/error.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AboutComponent } from './about/about.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
+    FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot()
