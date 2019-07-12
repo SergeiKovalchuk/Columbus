@@ -7,7 +7,6 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  form: {type: string, username: string, password: string, remmberMe: boolean}
   constructor() { }
 
   ngOnInit() {
