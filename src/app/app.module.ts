@@ -19,8 +19,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
-import { TransactionQueryComponent } from './transaction-query/transaction-query.component';
-import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { TransactionQueryComponent } from './transactions/transaction-query/transaction-query.component';
+import { TransactionListComponent } from './transactions/transaction-list/transaction-list.component';
 import { TransactionItemComponent } from './transactions/transaction-item/transaction-item.component';
 
 @NgModule({
