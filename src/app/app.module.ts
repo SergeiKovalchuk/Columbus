@@ -18,6 +18,7 @@ import { ErrorComponent } from './error/error.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     TransactionsComponent,
     ItineraryComponent,
     ErrorComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
