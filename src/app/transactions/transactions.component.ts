@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TransactionsComponent implements OnInit {
   sideShown = true;
+  collapse = '>';
+
   constructor(
     private router: Router,
     private route: ActivatedRoute) {
@@ -17,8 +19,12 @@ export class TransactionsComponent implements OnInit {
   }
 
   onToggleSide() {
-    console.log(this.sideShown);
     this.sideShown = !this.sideShown;
+    if (this.collapse === '<') {
+      this.collapse = '>';
+    } else {
+      this.collapse = '<';
+    }
   }
   isActive() {
     return this.sideShown;

@@ -3,10 +3,6 @@
     width: 100%;
     align-items: stretch;
 }
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}
 
 #sidebar {
     min-width: 250px;
@@ -92,4 +88,11 @@ ul ul a {
     font-size: 0.9em;
     padding-left: 30px;
     background: #6d7fcc;
+}
+
+.horizontal {
+    width: 10px;
+    height: 100vh;
+    background: #6d7fcc;
+    margin-left: -3px;
 }
