@@ -28,8 +28,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "./src/assets/fonts/simple-line-icons.min.css",
-              "./src/assets/css/login.css",
-              "/src/assets/css/divider-text-middle.css"
+              "./src/assets/css/login.css"
             ],
             "scripts": [
               "node_modules/@clr/icons/clr-icons.min.js",
