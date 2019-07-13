@@ -7,13 +7,21 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./transactions.component.css']
 })
 export class TransactionsComponent implements OnInit {
-
+  sideShown = true;
   constructor(
     private router: Router,
     private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+  }
+
+  onToggleSide() {
+    console.log(this.sideShown);
+    this.sideShown = !this.sideShown;
+  }
+  isActive() {
+    return this.sideShown;
   }
 
 }
