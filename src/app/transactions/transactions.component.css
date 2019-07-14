@@ -53,6 +53,9 @@ a, a:hover, a:focus {
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
+    max-height: 90vh;
+    position: sticky;
+    top: 10vh;
 }
 
 #sidebar .sidebar-header {
@@ -96,6 +99,5 @@ ul ul a {
     background: #6d7fcc;
     margin-left: -3px;
     position: sticky;
-    top:10vh;
-    
+    top:10vh;  
 }
