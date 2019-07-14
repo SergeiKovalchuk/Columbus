@@ -46,7 +46,7 @@ import { TransactionItemComponent } from './transactions/transaction-item/transa
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [ AuthGuard , AuthService , PrivGuard , PrivService , ErrorService ],
+  providers: [ AuthService , AuthGuard , PrivGuard , PrivService , ErrorService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

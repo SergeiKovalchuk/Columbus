@@ -3,7 +3,6 @@ import { AuthService } from './../shared/auth.service';
 import { Component, OnInit, NgModule, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ErrorService } from '../error/error.service';
 
 @Component({
   selector: 'app-login',
