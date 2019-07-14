@@ -2,7 +2,7 @@ import { LoginCredentials } from '../login/loginCredentials.model';
 
 export class AuthService {
     private loginCredentials = new LoginCredentials('', '');
-    private loggedIn = false;
+    private loggedIn = true;
 
     isAuthenticated() {
       const promise = new Promise(

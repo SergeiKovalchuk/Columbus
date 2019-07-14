@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-transaction-query',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-query.component.css']
 })
 export class TransactionQueryComponent implements OnInit {
-
+  @ViewChild('f', { static: false }) queryForm: NgForm;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(form: NgForm) {
+    console.log(this.queryForm.value);
+    console.log(form.value);
+  }
 }

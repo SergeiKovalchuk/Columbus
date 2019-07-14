@@ -4,30 +4,24 @@
     align-items: stretch;
 }
 
+#sidebar.active {
+    margin-left: -350px;
+}
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 83vh;
+    max-height: 83vh;
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 83vh;
-}
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -350px;
     }
     #sidebar.active {
         margin-left: 0;
     }
 }
-/*
-    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
-*/
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -53,7 +47,8 @@ a, a:hover, a:focus {
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
-    max-height: 90vh;
+    max-height: 83vh;
+    min-height: 83vh;
     position: sticky;
     top: 10vh;
 }
