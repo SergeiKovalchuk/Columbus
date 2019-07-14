@@ -9,12 +9,12 @@ import { LoginComponent } from './login/login.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'Transactions', pathMatch: 'full'},
+  {path: '', redirectTo: 'Transactions', pathMatch: 'full' , canActivate: [AuthGuard]},
   {path: 'Transactions', component: TransactionsComponent , canActivate: [AuthGuard]},
   {path: 'Itinerary', component: ItineraryComponent , canActivate: [PrivGuard]},
   {path: 'Login', component: LoginComponent},
-  {path: 'About', component: AboutComponent},
-  {path: 'Settings', component: ItineraryComponent},
+  {path: 'About', component: AboutComponent , canActivate: [AuthGuard]},
+  {path: 'Settings', component: ItineraryComponent , canActivate: [AuthGuard]},
   {path: 'Error', component: ErrorComponent},
   {path: '**', redirectTo: 'Transactions'}
 ];
