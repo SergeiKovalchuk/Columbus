@@ -33,5 +33,8 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+  onRequestPermissions() {
+    console.log('Requested Permmisions');
+  }
 
 }
