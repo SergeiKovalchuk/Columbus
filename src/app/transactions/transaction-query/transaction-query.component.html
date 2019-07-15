@@ -1,66 +1,16 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <label class="text-primary">General</label>
-    <div class="form-group"><label class="text-secondary">Service</label>
-        <input 
-        type="text"
-        id="generalService"
-        class="form-control"
-        name="generalService"
-        ngModel
-        ></div>
-    <hr>
-    <label class="text-primary">Producer</label>
-    <div class="form-group"><label class="text-secondary">Service</label>
-        <input 
-        class="form-control" 
-        type="text" 
-        ngModel
-        name="producerService"
-        >
+<form (ngSubmit)="onSubmit()" [formGroup]="queryForm">
+
+  <label class="text-primary centered form-header-sized">General</label>
+  <div class="form-group"><label class="text-secondary label-sized">Service:</label>
+    <select formControlName="generalService" class="select-box-sized">
+        <option [ngValue]="null" disabled>Select One Service</option>
+        <option *ngFor="let generalService of generalServices" [value]="generalService">
+         {{ generalService }}
+        </option>
+      </select> 
     </div>
-    <div class="form-group"><label class="text-secondary">Operation</label>
-        <input 
-        class="form-control" 
-        type="text" 
-        ngModel
-        name="producerOperation"
-        >
-    </div>
-    <div class="form-group"><label class="text-secondary">Action</label>
-      <input 
-      class="form-control" 
-      type="text" 
-      ngModel
-      name="producerAction"
-      >
-    </div>
-    <hr>
-    <label class="text-primary">Consumer</label>
-    <div class="form-group"><label class="text-secondary">Service</label>
-        <input 
-        class="form-control" 
-        type="text" 
-        ngModel
-        name="consumerService"
-        >
-    </div>
-    <div class="form-group"><label class="text-secondary">Operation</label>
-        <input 
-        class="form-control" 
-        type="text" 
-        ngModel
-        name="consumerOperation"
-        >
-    </div>
-    <div class="form-group"><label class="text-secondary">Action</label>
-      <input 
-      class="form-control" 
-      type="text" 
-      ngModel
-      name="consumerAction"
-      >
-    </div>
-    <button class="btn btn-info mt-2" type="submit">Search</button>
-  </form>
+  <hr>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
 </div>

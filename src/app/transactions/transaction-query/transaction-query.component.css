@@ -1,0 +1,20 @@
+.select-box-sized {
+    width: 80%;
+    margin-left: 3%;
+}
+
+.label-sized {
+    color: black!important;
+    font-size:14px;
+}
+
+.centered {
+    position: relative;
+    left: 40%;
+}
+
+.form-header-sized {
+    color:blue!important;
+    font-size: 18px;
+    font-weight: bold;
+}

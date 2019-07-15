@@ -10,8 +10,8 @@
 #sidebar {
     min-width: 350px;
     max-width: 350px;
-    min-height: 83vh;
-    max-height: 83vh;
+    min-height: 90vh;
+    max-height: 90vh;
 }
 
 @media (max-width: 768px) {
@@ -47,8 +47,8 @@ a, a:hover, a:focus {
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
-    max-height: 83vh;
-    min-height: 83vh;
+    max-height: 90vh;
+    min-height: 90vh;
     position: sticky;
     top: 10vh;
 }

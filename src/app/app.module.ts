@@ -17,7 +17,7 @@ import { AuthService } from './shared/auth.service';
 import { ErrorComponent } from './error/error.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AboutComponent } from './about/about.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { TransactionQueryComponent } from './transactions/transaction-query/transaction-query.component';
 import { TransactionListComponent } from './transactions/transaction-list/transaction-list.component';
@@ -42,6 +42,7 @@ import { TransactionItemComponent } from './transactions/transaction-item/transa
     AppRoutingModule,
     ClarityModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot()
