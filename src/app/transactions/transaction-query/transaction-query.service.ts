@@ -8,12 +8,12 @@ export class TransactionQueryService {
     providers = [
         new TransactionQuery('Service1', 'Operation1', 'Action1'),
         new TransactionQuery('Service2', 'Operation2', 'Action2'),
-        new TransactionQuery('Service3', 'Operation3', 'Action3'),
+        new TransactionQuery('Service3', 'Operation3', 'Action3')
     ];
     consumers = [
         new TransactionQuery('Service4', 'Operation4', 'Action4'),
         new TransactionQuery('Service5', 'Operation5', 'Action5'),
-        new TransactionQuery('Service6', 'Operation6', 'Action6'),
+        new TransactionQuery('Service6', 'Operation6', 'Action6')
     ];
 
     getGeneralServices() {
