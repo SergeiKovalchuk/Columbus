@@ -20,12 +20,26 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.queryForm = new FormGroup({
-      generalService: new FormControl('')
+      generalService: new FormControl(''),
+      providerService: new FormControl(''),
+      providerOperation: new FormControl(''),
+      providerAction: new FormControl(''),
+      consumerService: new FormControl(''),
+      consumerOperation: new FormControl(''),
+      consumerAction: new FormControl('')
     });
 
     this.transactionQueryService.getGeneralServices().subscribe((generalServicesArr: any[]) => {
-    this.generalServices = generalServicesArr; // Observable completes so no need to unsubscribe
-  });
+      this.generalServices = generalServicesArr; // Observable completes so no need to unsubscribe
+    });
+
+    this.transactionQueryService.getProviders().subscribe((providers: any[]) => {
+      this.providers = providers; // Observable completes so no need to unsubscribe
+    });
+
+    this.transactionQueryService.getConsumers().subscribe((consumers: any[]) => {
+      this.consumers = consumers; // Observable completes so no need to unsubscribe
+    });
   }
 
   onSubmit(form: NgForm) {

@@ -4,12 +4,71 @@
   <label class="text-primary centered form-header-sized">General</label>
   <div class="form-group"><label class="text-secondary label-sized">Service:</label>
     <select formControlName="generalService" class="select-box-sized">
-        <option [ngValue]="null" disabled>Select One Service</option>
-        <option *ngFor="let generalService of generalServices" [value]="generalService">
-         {{ generalService }}
-        </option>
-      </select> 
-    </div>
+      <option [ngValue]="null" disabled>Select One Service</option>
+      <option *ngFor="let generalService of generalServices" [value]="generalService">
+        {{ generalService }}
+      </option>
+    </select> 
+  </div>
+
+  <hr>
+  <label class="text-primary centered form-header-sized">Provider</label>
+  <div class="form-group"><label class="text-secondary label-sized">Service:</label>
+    <select formControlName="providerService" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Service</option>
+      <option *ngFor="let provider of providers" [ngValue]="provider">
+        {{ provider.Service }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
+    <select formControlName="providerOperation" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Operation</option>
+      <option *ngFor="let provider of providers" [ngValue]="provider">
+        {{ provider.Operation }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"><label class="text-secondary label-sized">Action:</label>
+    <select formControlName="providerAction" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Action</option>
+      <option *ngFor="let provider of providers" [ngValue]="provider">
+        {{ provider.Action }}
+      </option>
+    </select>
+  </div>
+
+  <hr>
+  <label class="text-primary centered form-header-sized">Consumer</label>
+  <div class="form-group"><label class="text-secondary label-sized">Service:</label>
+    <select formControlName="consumerService" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Service</option>
+      <option *ngFor="let consumer of consumers" [ngValue]="consumer">
+        {{ consumer.Service }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
+    <select formControlName="consumerOperation" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Operation</option>
+      <option *ngFor="let consumer of consumers" [ngValue]="consumer">
+          {{ consumer.Operation }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"><label class="text-secondary label-sized">Action:</label>
+    <select formControlName="consumerAction" class="select-box-sized">
+      <option [ngValue]="null" disabled>Select One Action</option>
+      <option *ngFor="let consumer of consumers" [ngValue]="consumer">
+          {{ consumer.Action }}
+      </option>
+    </select>
+  </div>
+
   <hr>
   <button type="submit" class="btn btn-primary">Search</button>
 </form>
