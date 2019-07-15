@@ -39,13 +39,13 @@ export class TransactionQueryService {
     }
 
     getConsumers() {
-        const providerObservable = Observable.create(observer => {
+        const consumersObservable = Observable.create(observer => {
             // simulate backend query
             setInterval(() => {
                 observer.next(this.consumers);
                 observer.complete();
             }, 700);
         });
-        return providerObservable;
+        return consumersObservable;
     }
 }
