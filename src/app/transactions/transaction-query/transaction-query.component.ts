@@ -41,14 +41,18 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
     this.transactionQueryService.getProviders().subscribe((providers: TransactionQuery[]) => {
       this.providers = providers; // Observable completes so no need to unsubscribe
       providers.forEach((elem: TransactionQuery) => {
-        this.generalServices.push(elem.Service);
+        if ( this.generalServices.indexOf(elem.Service) ) {
+          this.generalServices.push(elem.Service);
+        }
       });
     });
 
     this.transactionQueryService.getConsumers().subscribe((consumers: TransactionQuery[]) => {
       this.consumers = consumers; // Observable completes so no need to unsubscribe
       consumers.forEach((elem: TransactionQuery) => {
-        this.generalServices.push(elem.Service);
+        if ( this.generalServices.indexOf(elem.Service) ) {
+          this.generalServices.push(elem.Service);
+        }
       });
     });
 

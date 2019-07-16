@@ -1,3 +1,4 @@
+import { UniquePipe } from 'ngx-pipes';
 import { ErrorService } from './error/error.service';
 import { PrivService } from './shared/priv.service';
 import { PrivGuard } from './shared/priv-guard.service';
@@ -35,7 +36,8 @@ import { TransactionItemComponent } from './transactions/transaction-item/transa
     FooterComponent,
     TransactionQueryComponent,
     TransactionListComponent,
-    TransactionItemComponent
+    TransactionItemComponent,
+    UniquePipe
   ],
   imports: [
     BrowserModule,
