@@ -15,7 +15,7 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
 
   constructor(private transactionQueryService: TransactionQueryService) { }
   generalServices = [];
-  selectorText = new TransactionQuery('Select a Service', 'Select an Operation', 'Select an Action');
+  selectorText = new TransactionQuery('*', '*', '*');
 
   providers: TransactionQuery[] = [];
   consumers: TransactionQuery[] = [];
@@ -38,17 +38,20 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
                                 consumerAction: new FormControl('')})
     });
 
-    this.transactionQueryService.getGeneralServices().subscribe((generalServicesArr: any[]) => {
-      this.generalServices = generalServicesArr; // Observable completes so no need to unsubscribe
-    });
-
-    this.transactionQueryService.getProviders().subscribe((providers: any[]) => {
+    this.transactionQueryService.getProviders().subscribe((providers: TransactionQuery[]) => {
       this.providers = providers; // Observable completes so no need to unsubscribe
+      providers.forEach((elem: TransactionQuery) => {
+        this.generalServices.push(elem.Service);
+      });
     });
 
-    this.transactionQueryService.getConsumers().subscribe((consumers: any[]) => {
+    this.transactionQueryService.getConsumers().subscribe((consumers: TransactionQuery[]) => {
       this.consumers = consumers; // Observable completes so no need to unsubscribe
+      consumers.forEach((elem: TransactionQuery) => {
+        this.generalServices.push(elem.Service);
+      });
     });
+
   }
 
   onSubmit(form: NgForm) {
@@ -56,30 +59,30 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
     console.log(this.queryForm);
   }
 
-  onProvidersServiceChange(data: TransactionQuery) {
-    this.providersOperations = this.providers.filter(prov => prov.Service === data.Service);
+  onProvidersServiceChange(data: string) {
+    this.providersOperations = this.providers.filter(prov => prov.Service === data);
     // reset sub-selects
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.providerFG['controls'].providerOperation.setValue(this.selectorText.Operation, {onlySelf: true});
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.providerFG['controls'].providerAction.setValue(this.selectorText.Action, {onlySelf: true});
   }
-  onProvidersOperationChange(data: TransactionQuery) {
-    this.providersActions = this.providersOperations.filter(prov => prov.Operation === data.Operation);
+  onProvidersOperationChange(data: string) {
+    this.providersActions = this.providersOperations.filter(prov => prov.Operation === data);
     // reset sub-selects
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.providerFG['controls'].providerAction.setValue(this.selectorText.Action, {onlySelf: true});
   }
-  onConsumersServiceChange(data: TransactionQuery) {
-    this.consumersOperations = this.consumers.filter(cons => cons.Service === data.Service);
+  onConsumersServiceChange(data: string) {
+    this.consumersOperations = this.consumers.filter(cons => cons.Service === data);
     // reset sub-selects
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.consumerFG['controls'].consumerOperation.setValue(this.selectorText.Operation, {onlySelf: true});
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.consumerFG['controls'].consumerAction.setValue(this.selectorText.Action, {onlySelf: true});
   }
-  onConsumersOperationChange(data: TransactionQuery) {
-    this.consumersActions = this.consumers.filter(cons => cons.Operation === data.Operation);
+  onConsumersOperationChange(data: string) {
+    this.consumersActions = this.consumers.filter(cons => cons.Operation === data);
     // reset sub-selects
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.consumerFG['controls'].consumerAction.setValue(this.selectorText.Action, {onlySelf: true});

@@ -4,8 +4,8 @@
   <label class="text-primary centered form-header-sized">General</label>
   <div class="form-group"><label class="text-secondary label-sized">Service:</label>
     <select formControlName="generalServiceFG" class="select-box-sized">
-      <option [ngValue]="null" disabled>Select One Service</option>
-      <option *ngFor="let generalService of generalServices" [value]="generalServiceFG">
+      <option [ngValue]="null" disabled>*</option>
+      <option *ngFor="let generalService of generalServices" [value]="generalService">
         {{ generalService }}
       </option>
     </select> 
@@ -16,8 +16,8 @@
     <label class="text-primary centered form-header-sized">Provider</label>
     <div class="form-group"><label class="text-secondary label-sized">Service:</label>
       <select formControlName="providerService" class="select-box-sized" (ngModelChange)="onProvidersServiceChange($event)">
-        <option [ngValue]="selectorText.Service" disabled>Select One Service</option>
-        <option *ngFor="let provider of providers" [ngValue]="provider">
+        <option [ngValue]="selectorText.Service" disabled>*</option>
+        <option *ngFor="let provider of providers" [ngValue]="provider.Service">
           {{ provider.Service }}
         </option>
       </select>
@@ -25,8 +25,8 @@
 
     <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
       <select formControlName="providerOperation" class="select-box-sized" (ngModelChange)="onProvidersOperationChange($event)">
-        <option [ngValue]="selectorText.Operation" disabled>Select One Operation</option>
-        <option *ngFor="let provider of providersOperations" [ngValue]="provider">
+        <option [ngValue]="selectorText.Operation" disabled>*</option>
+        <option *ngFor="let provider of providersOperations" [ngValue]="provider.Operation">
           {{ provider.Operation }}
         </option>
       </select>
@@ -34,8 +34,8 @@
 
     <div class="form-group"><label class="text-secondary label-sized">Action:</label>
       <select formControlName="providerAction" class="select-box-sized">
-        <option [ngValue]="selectorText.Action" disabled>Select One Action</option>
-        <option *ngFor="let provider of providersActions" [ngValue]="provider">
+        <option [ngValue]="selectorText.Action" disabled>*</option>
+        <option *ngFor="let provider of providersActions" [ngValue]="provider.Action">
           {{ provider.Action }}
         </option>
       </select>
@@ -47,8 +47,8 @@
     <label class="text-primary centered form-header-sized">Consumer</label>
     <div class="form-group"><label class="text-secondary label-sized">Service:</label>
       <select formControlName="consumerService" class="select-box-sized" (ngModelChange)="onConsumersServiceChange($event)">
-        <option [ngValue]="selectorText.Service" disabled>Select One Service</option>
-        <option *ngFor="let consumer of consumers" [ngValue]="consumer">
+        <option [ngValue]="selectorText.Service" disabled>*</option>
+        <option *ngFor="let consumer of consumers" [ngValue]="consumer.Service">
           {{ consumer.Service }}
         </option>
       </select>
@@ -56,8 +56,8 @@
 
     <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
       <select formControlName="consumerOperation" class="select-box-sized" (ngModelChange)="onConsumersOperationChange($event)">
-        <option [ngValue]="selectorText.Operation" disabled>Select One Operation</option>
-        <option *ngFor="let consumer of consumersOperations" [ngValue]="consumer">
+        <option [ngValue]="selectorText.Operation" disabled>*</option>
+        <option *ngFor="let consumer of consumersOperations" [ngValue]="consumer.Operation">
             {{ consumer.Operation }}
         </option>
       </select>
@@ -65,8 +65,8 @@
 
     <div class="form-group"><label class="text-secondary label-sized">Action:</label>
       <select formControlName="consumerAction" class="select-box-sized">
-        <option [ngValue]="selectorText.Action" disabled>Select One Action</option>
-        <option *ngFor="let consumer of consumersActions" [ngValue]="consumer">
+        <option [ngValue]="selectorText.Action" disabled>*</option>
+        <option *ngFor="let consumer of consumersActions" [ngValue]="consumer.Action">
             {{ consumer.Action }}
         </option>
       </select>
