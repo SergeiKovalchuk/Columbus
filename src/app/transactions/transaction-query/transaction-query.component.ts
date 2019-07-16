@@ -29,13 +29,13 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // init form
     this.queryForm = new FormGroup({
-      generalServiceFG: new FormControl(''),
-      providerFG: new FormGroup( {providerService: new FormControl(''),
-                                providerOperation: new FormControl(''),
-                                providerAction: new FormControl('')}),
-      consumerFG: new FormGroup(  {consumerService: new FormControl(''),
-                                consumerOperation: new FormControl(''),
-                                consumerAction: new FormControl('')})
+      generalServiceFG: new FormControl('*'),
+      providerFG: new FormGroup( {providerService: new FormControl('*'),
+                                providerOperation: new FormControl('*'),
+                                providerAction: new FormControl('*')}),
+      consumerFG: new FormGroup(  {consumerService: new FormControl('*'),
+                                consumerOperation: new FormControl('*'),
+                                consumerAction: new FormControl('*')})
     });
 
     this.transactionQueryService.getProviders().subscribe((providers: TransactionQuery[]) => {

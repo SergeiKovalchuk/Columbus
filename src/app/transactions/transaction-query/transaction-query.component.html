@@ -4,7 +4,7 @@
   <label class="text-primary centered form-header-sized">General</label>
   <div class="form-group"><label class="text-secondary label-sized">Service:</label>
     <select formControlName="generalServiceFG" class="select-box-sized">
-      <option [ngValue]="null" disabled>*</option>
+      <option [ngValue]="selectorText.Service" disabled>*</option>
       <option *ngFor="let generalService of generalServices" [ngValue]="generalService"><!--Unsing a unique pipe is bad by angular standards, expensive - should switch-->
         {{ generalService }}
       </option>
