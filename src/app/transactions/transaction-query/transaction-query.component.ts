@@ -66,6 +66,7 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
     this.queryForm.controls.providerFG['controls'].providerOperation.setValue(this.selectorText.Operation, {onlySelf: true});
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.providerFG['controls'].providerAction.setValue(this.selectorText.Action, {onlySelf: true});
+    this.providersActions = this.providersOperations.slice();
   }
   onProvidersOperationChange(data: string) {
     this.providersActions = this.providersOperations.filter(prov => prov.Operation === data);
@@ -80,6 +81,7 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
     this.queryForm.controls.consumerFG['controls'].consumerOperation.setValue(this.selectorText.Operation, {onlySelf: true});
     // tslint:disable-next-line:no-string-literal
     this.queryForm.controls.consumerFG['controls'].consumerAction.setValue(this.selectorText.Action, {onlySelf: true});
+    this.consumersActions = this.consumersOperations.slice();
   }
   onConsumersOperationChange(data: string) {
     this.consumersActions = this.consumers.filter(cons => cons.Operation === data);

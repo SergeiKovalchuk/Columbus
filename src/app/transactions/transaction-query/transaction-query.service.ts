@@ -6,7 +6,7 @@ import { TransactionQuery } from './transaction-query.model';
 export class TransactionQueryService {
     providers = [
         new TransactionQuery('Service1', 'Operation1', 'Action1'),
-        new TransactionQuery('Service2', 'Operation2', 'Action2'),
+        new TransactionQuery('Service1', 'Operation2', 'Action2'),
         new TransactionQuery('Service3', 'Operation3', 'Action3')
     ];
     consumers = [
