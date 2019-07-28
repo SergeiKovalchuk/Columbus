@@ -18,7 +18,7 @@
                 class="select-box-sized"
                 bsDatepicker
                 [(bsValue)]="yesterday"
-                [bsConfig]="{ isAnimated: true }">
+                [bsConfig]="{ isAnimated: true , containerClass: 'theme-dark-blue'}">
     </div>
     <div class="form-group">
         <label class="text-secondary label-sized">To Date:</label>
@@ -27,7 +27,7 @@
                 formControlName="toDate"
                 bsDatepicker
                 [(bsValue)]="today"
-                [bsConfig]="{ isAnimated: true }">
+                [bsConfig]="{ isAnimated: true , containerClass: 'theme-dark-blue'}">
     </div>
   </div>
 
