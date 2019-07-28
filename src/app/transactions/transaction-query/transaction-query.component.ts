@@ -34,8 +34,8 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
     this.queryForm = new FormGroup({
       generalFG: new FormGroup({
         generalApplication: new FormControl('*'),
-        fromDate: new FormControl(),
-        toDate: new FormControl()
+        fromDate: new FormControl(this.yesterday),
+        toDate: new FormControl(this.today)
       })
       ,
       providerFG: new FormGroup({
