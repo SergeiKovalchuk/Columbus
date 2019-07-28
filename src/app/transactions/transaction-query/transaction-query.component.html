@@ -2,11 +2,11 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="queryForm">
 
   <label class="text-primary centered form-header-sized">General</label>
-  <div class="form-group"><label class="text-secondary label-sized">Service:</label>
-    <select formControlName="generalServiceFG" class="select-box-sized">
-      <option [ngValue]="selectorText.Service" disabled>*</option>
-      <option *ngFor="let generalService of generalServices" [ngValue]="generalService"><!--Unsing a unique pipe is bad by angular standards, expensive - should switch-->
-        {{ generalService }}
+  <div class="form-group"><label class="text-secondary label-sized">Application:</label>
+    <select formControlName="generalApplicationFG" class="select-box-sized">
+      <option [ngValue]="selectorText.Application" disabled>*</option>
+      <option *ngFor="let generalApplication of generalApplications" [ngValue]="generalApplication"><!--Unsing a unique pipe is bad by angular standards, expensive - should switch-->
+        {{ generalApplication }}
       </option>
     </select> 
   </div>
@@ -14,29 +14,29 @@
   <hr>
   <div formGroupName="providerFG">
     <label class="text-primary centered form-header-sized">Provider</label>
+    <div class="form-group"><label class="text-secondary label-sized">Application:</label>
+      <select formControlName="providerApplication" class="select-box-sized" (ngModelChange)="onProvidersApplicationChange($event)">
+        <option [ngValue]="selectorText.Application" disabled>*</option>
+        <option *ngFor="let provider of providers | unique: 'Application'" [ngValue]="provider.Application">
+          {{ provider.Application }}
+        </option>
+      </select>
+    </div>
+
     <div class="form-group"><label class="text-secondary label-sized">Service:</label>
       <select formControlName="providerService" class="select-box-sized" (ngModelChange)="onProvidersServiceChange($event)">
         <option [ngValue]="selectorText.Service" disabled>*</option>
-        <option *ngFor="let provider of providers | unique: 'Service'" [ngValue]="provider.Service">
+        <option *ngFor="let provider of providersServices | unique: 'Service'" [ngValue]="provider.Service">
           {{ provider.Service }}
         </option>
       </select>
     </div>
 
     <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
-      <select formControlName="providerOperation" class="select-box-sized" (ngModelChange)="onProvidersOperationChange($event)">
+      <select formControlName="providerOperation" class="select-box-sized">
         <option [ngValue]="selectorText.Operation" disabled>*</option>
         <option *ngFor="let provider of providersOperations | unique: 'Operation'" [ngValue]="provider.Operation">
           {{ provider.Operation }}
-        </option>
-      </select>
-    </div>
-
-    <div class="form-group"><label class="text-secondary label-sized">Action:</label>
-      <select formControlName="providerAction" class="select-box-sized">
-        <option [ngValue]="selectorText.Action" disabled>*</option>
-        <option *ngFor="let provider of providersActions | unique: 'Action'" [ngValue]="provider.Action">
-          {{ provider.Action }}
         </option>
       </select>
     </div>
@@ -45,34 +45,37 @@
   <hr>
   <div formGroupName="consumerFG">
     <label class="text-primary centered form-header-sized">Consumer</label>
+    <div class="form-group"><label class="text-secondary label-sized">Application:</label>
+      <select formControlName="consumerApplication" class="select-box-sized" (ngModelChange)="onConsumersApplicationChange($event)">
+        <option [ngValue]="selectorText.Application" disabled>*</option>
+        <option *ngFor="let consumer of consumers | unique: 'Application'" [ngValue]="consumer.Application">
+          {{ consumer.Application }}
+        </option>
+      </select>
+    </div>
+
     <div class="form-group"><label class="text-secondary label-sized">Service:</label>
       <select formControlName="consumerService" class="select-box-sized" (ngModelChange)="onConsumersServiceChange($event)">
         <option [ngValue]="selectorText.Service" disabled>*</option>
-        <option *ngFor="let consumer of consumers | unique: 'Service'" [ngValue]="consumer.Service">
-          {{ consumer.Service }}
+        <option *ngFor="let consumer of consumersServices | unique: 'Service'" [ngValue]="consumer.Service">
+            {{ consumer.Service }}
         </option>
       </select>
     </div>
 
     <div class="form-group"><label class="text-secondary label-sized">Operation:</label>
-      <select formControlName="consumerOperation" class="select-box-sized" (ngModelChange)="onConsumersOperationChange($event)">
+      <select formControlName="consumerOperation" class="select-box-sized">
         <option [ngValue]="selectorText.Operation" disabled>*</option>
         <option *ngFor="let consumer of consumersOperations | unique: 'Operation'" [ngValue]="consumer.Operation">
             {{ consumer.Operation }}
         </option>
       </select>
     </div>
-
-    <div class="form-group"><label class="text-secondary label-sized">Action:</label>
-      <select formControlName="consumerAction" class="select-box-sized">
-        <option [ngValue]="selectorText.Action" disabled>*</option>
-        <option *ngFor="let consumer of consumersActions | unique: 'Action'" [ngValue]="consumer.Action">
-            {{ consumer.Action }}
-        </option>
-      </select>
-    </div>
   </div>
   <hr>
-  <button type="submit" class="btn btn-primary" style="position:absolute; margin-left: 5%; width:80%;">Search</button>
+  <div>
+    <button type="submit" class="btn btn-primary" style="position:absolute; margin-left: 3%; width:40%;">Search</button>
+    <a class="btn btn-secondary" style="position:absolute; margin-left: 50%; width:40%;" (click)="onReset()">Reset</a>
+  </div>
 </form>
 </div>
