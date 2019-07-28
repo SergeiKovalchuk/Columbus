@@ -23,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TransactionQueryComponent } from './transactions/transaction-query/transaction-query.component';
 import { TransactionListComponent } from './transactions/transaction-list/transaction-list.component';
 import { TransactionItemComponent } from './transactions/transaction-item/transaction-item.component';
+import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,9 @@ import { TransactionItemComponent } from './transactions/transaction-item/transa
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    DatepickerModule.forRoot()
   ],
   providers: [ AuthService , AuthGuard , PrivGuard , PrivService , ErrorService ],
   bootstrap: [AppComponent]

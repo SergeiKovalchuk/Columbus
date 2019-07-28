@@ -2,6 +2,7 @@ import { TransactionQuery } from './transaction-query.model';
 import { TransactionQueryService } from './transaction-query.service';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
+import { parseTwoDigitYear } from 'ngx-bootstrap/chronos/units/year';
 
 @Component({
   selector: 'app-transaction-query',
@@ -10,8 +11,9 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
 })
 export class TransactionQueryComponent implements OnInit, OnDestroy {
   // @ViewChild('f', { static: false }) queryForm: NgForm;
-
   queryForm: FormGroup;
+  today = new Date();
+  yesterday = new Date();
 
   constructor(private transactionQueryApplication: TransactionQueryService) { }
   generalApplications = [];
@@ -27,15 +29,25 @@ export class TransactionQueryComponent implements OnInit, OnDestroy {
   consumersOperations: TransactionQuery[] = [];
 
   ngOnInit() {
+    this.yesterday.setDate(this.today.getDate() - 1 );
     // init form
     this.queryForm = new FormGroup({
-      generalApplicationFG: new FormControl('*'),
-      providerFG: new FormGroup( {providerApplication: new FormControl('*'),
-                                providerService: new FormControl('*'),
-                                providerOperation: new FormControl('*')}),
-      consumerFG: new FormGroup(  {consumerApplication: new FormControl('*'),
-                                consumerService: new FormControl('*'),
-                                consumerOperation: new FormControl('*')})
+      generalFG: new FormGroup({
+        generalApplication: new FormControl('*'),
+        fromDate: new FormControl(),
+        toDate: new FormControl()
+      })
+      ,
+      providerFG: new FormGroup({
+        providerApplication: new FormControl('*'),
+        providerService: new FormControl('*'),
+        providerOperation: new FormControl('*')
+      }),
+      consumerFG: new FormGroup({
+        consumerApplication: new FormControl('*'),
+        consumerService: new FormControl('*'),
+        consumerOperation: new FormControl('*')
+      })
     });
 
     this.transactionQueryApplication.getProviders().subscribe((providers: TransactionQuery[]) => {

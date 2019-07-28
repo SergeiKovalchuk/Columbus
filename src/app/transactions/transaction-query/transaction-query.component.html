@@ -1,14 +1,34 @@
 <div class="container">
 <form (ngSubmit)="onSubmit()" [formGroup]="queryForm">
 
-  <label class="text-primary centered form-header-sized">General</label>
-  <div class="form-group"><label class="text-secondary label-sized">Application:</label>
-    <select formControlName="generalApplicationFG" class="select-box-sized">
-      <option [ngValue]="selectorText.Application" disabled>*</option>
-      <option *ngFor="let generalApplication of generalApplications" [ngValue]="generalApplication"><!--Unsing a unique pipe is bad by angular standards, expensive - should switch-->
-        {{ generalApplication }}
-      </option>
-    </select> 
+  <div formGroupName="generalFG">
+    <label class="text-primary centered form-header-sized">General</label>
+    <div class="form-group"><label class="text-secondary label-sized">Application:</label>
+      <select formControlName="generalApplication" class="select-box-sized">
+        <option [ngValue]="selectorText.Application" disabled>*</option>
+        <option *ngFor="let generalApplication of generalApplications" [ngValue]="generalApplication"><!--Unsing a unique pipe is bad by angular standards, expensive - should switch-->
+          {{ generalApplication }}
+        </option>
+      </select> 
+    </div>
+    <div class="form-group">
+        <label class="text-secondary label-sized">From Date:</label>
+          <input type="text"
+                formControlName="fromDate"
+                class="select-box-sized"
+                bsDatepicker
+                [(bsValue)]="yesterday"
+                [bsConfig]="{ isAnimated: true }">
+    </div>
+    <div class="form-group">
+        <label class="text-secondary label-sized">To Date:</label>
+          <input type="text"
+                class="select-box-sized"
+                formControlName="toDate"
+                bsDatepicker
+                [(bsValue)]="today"
+                [bsConfig]="{ isAnimated: true }">
+    </div>
   </div>
 
   <hr>

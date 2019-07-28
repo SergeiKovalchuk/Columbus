@@ -19,3 +19,7 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.bs-datepicker-container .bs-datepicker-head {
+    background-color: "blue"!important; 
+  }
