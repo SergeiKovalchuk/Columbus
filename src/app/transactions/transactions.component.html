@@ -1,13 +1,12 @@
 <div class="wrapper" style="height: 90vh">
-  <!-- Sidebar -->
-    <nav id="sidebar" [ngClass]="{active: !isActive()}" style="max-height: 100%">
-      <app-transaction-query></app-transaction-query>
-    </nav>
-    <!--Change Button style to be screenside-->
-    <button type="button" id="sidebarCollapse" class="btn btn-info horizontal" (click)="onToggleSide()" (clickOutside)="onClickOutside()">
-        <i class="fas fa-align-left"></i>
-        <span>{{ collapse }}</span>
-    </button>
-    <app-transaction-list class="tran-list"></app-transaction-list>
+  <nav id="sidebar" [ngClass]="{active: !isActive()}" style="max-height: 100%">
+    <app-transaction-query></app-transaction-query>
+  </nav>
+  <button type="button" id="sidebarCollapse" class="btn btn-info horizontal" (click)="onToggleSide()" (clickOutside)="onClickOutside()">
+      <i class="fas fa-align-left"></i>
+      <span>{{ collapse }}</span>
+  </button>
+  <div [ngClass]="{overlay: isActive()}"></div>
+  <app-transaction-list class="tran-list"></app-transaction-list>
 </div>
 
