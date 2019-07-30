@@ -2,7 +2,6 @@ import { TransactionQuery } from './transaction-query.model';
 import { TransactionQueryService } from './transaction-query.service';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
-import { parseTwoDigitYear } from 'ngx-bootstrap/chronos/units/year';
 
 @Component({
   selector: 'app-transaction-query',

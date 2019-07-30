@@ -1,3 +1,4 @@
+import { ClickOutsideDirective } from './../assets/directives/clickOutside.directive';
 import { UniquePipe } from 'ngx-pipes';
 import { ErrorService } from './error/error.service';
 import { PrivService } from './shared/priv.service';
@@ -24,6 +25,7 @@ import { TransactionQueryComponent } from './transactions/transaction-query/tran
 import { TransactionListComponent } from './transactions/transaction-list/transaction-list.component';
 import { TransactionItemComponent } from './transactions/transaction-item/transaction-item.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TransactionQueryComponent,
     TransactionListComponent,
     TransactionItemComponent,
-    UniquePipe
+    UniquePipe,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    DatepickerModule.forRoot()
+    DatepickerModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [ AuthService , AuthGuard , PrivGuard , PrivService , ErrorService ],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { TransactionListService } from './transaction-list.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-list.component.css']
 })
 export class TransactionListComponent implements OnInit {
-
-  constructor() { }
+  list = [];
+  constructor(private transactionListService: TransactionListService) { }
 
   ngOnInit() {
+    this.list = this.transactionListService.getTranList();
+    console.log(this.list);
   }
 
 }

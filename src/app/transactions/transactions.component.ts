@@ -1,3 +1,4 @@
+import { TransactionListService } from './transaction-list/transaction-list.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TransactionQueryService } from './transaction-query/transaction-query.service';
@@ -6,10 +7,10 @@ import { TransactionQueryService } from './transaction-query/transaction-query.s
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.css'],
-  providers: [TransactionQueryService]
+  providers: [TransactionQueryService, TransactionListService]
 })
 export class TransactionsComponent implements OnInit {
-  sideShown = true;
+  sideShown = false;
   collapse = '>';
 
   constructor(
@@ -18,6 +19,12 @@ export class TransactionsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onClickOutside() {
+    if (this.sideShown === true) {
+      this.onToggleSide();
+    }
   }
 
   onToggleSide() {

@@ -96,3 +96,9 @@ ul ul a {
     position: sticky;
     top:10vh;  
 }
+
+.tran-list {
+    position: absolute;
+    top: 15vh;
+    left: 5%;
+}
