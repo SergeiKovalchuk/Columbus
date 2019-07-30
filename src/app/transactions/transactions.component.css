@@ -12,6 +12,7 @@
     max-width: 350px;
     min-height: 90vh;
     max-height: 90vh;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -94,14 +95,14 @@ ul ul a {
     background: #6d7fcc;
     margin-left: -3px;
     position: sticky;
-    top:10vh;  
+    top:10vh;
+    z-index: 1;
 }
 
 .tran-list {
     position: absolute;
     top: 15vh;
     left: 5%;
-    z-index: -1;
 }
 
 .overlay {
