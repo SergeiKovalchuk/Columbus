@@ -2,6 +2,11 @@
   <accordion-group>
     <p accordion-heading style="text-align: center">{{ item.TranID }}</p>
     <!-- now find a way to make it recursive with sub-services-->
-    <accordion *ngFor="let event of item.Events" style="text-align: center"><accordion-group><p accordion-heading style="text-align: center">{{event.EventID}}</p></accordion-group></accordion>
+    <accordion *ngFor="let event of item.Events" style="text-align: center">
+      <accordion-group>
+        <p accordion-heading style="text-align: center">{{event.EventID}}</p>
+        <p>{{event.Description}}</p>
+      </accordion-group>
+    </accordion>
   </accordion-group>
 </accordion>
